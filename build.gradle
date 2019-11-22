@@ -1,0 +1,86 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.55")
+    }
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+
+}
+
+group 'com.serenity'
+version '1.0-SNAPSHOT'
+
+defaultTasks 'clean', 'test', 'aggregate', 'generate'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    serenityCoreVersion = '2.0.38'
+    junitVersion = '4.12'
+    assertJVersion = '3.8.0'
+    logbackVersion = '1.2.3'
+    jacksonVersion = '2.9.5'
+}
+
+configurations.all {
+}
+
+dependencies {
+    compile "ch.qos.logback:logback-classic:${logbackVersion}",
+            "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}",
+            "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}",
+            "net.serenity-bdd:serenity-rest-assured:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
+            'com.google.code.gson:gson:2.8.5',
+            'org.assertj:assertj-core:3.6.1',
+            'io.swagger:swagger-annotations:1.5.22',
+            'javax.annotation:javax.annotation-api:1.3.2',
+            'org.threeten:threetenbp:1.4.0',
+            'net.andreinc.mockneat:mockneat:0.1.7'
+
+
+
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    testCompileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+    maxParallelForks = 2
+}
+
+task generate(type: Exec) {
+    commandLine 'java', '-jar', './swagger-codegen/openapi-generator-cli.jar', 'generate',
+            '-i', swaggerUrl, '-g', 'java', '--skip-validate-spec',
+            '--model-package', 'models.' + packageName,
+            '-Dmodels', '-DmodelDocs=false', '-DmodelTests=false'
+
+    //store the output instead of printing to the console:
+    standardOutput = new ByteArrayOutputStream()
+
+    //extension method execSomething.output() can be used to obtain the output:
+    ext.output = {
+        return standardOutput.toString()
+    }
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate)
