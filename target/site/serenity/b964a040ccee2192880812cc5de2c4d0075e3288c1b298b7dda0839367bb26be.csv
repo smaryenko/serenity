@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Booking tests","Test delete booking","FAILURE","2019-11-22T14:55:31.831297+01:00[Europe/Amsterdam]","0.0","0.28"
+"Practice tests","Log in test fail for screenshot","ERROR","2019-11-22T14:55:26.779312+01:00[Europe/Amsterdam]","0.0","17.99"

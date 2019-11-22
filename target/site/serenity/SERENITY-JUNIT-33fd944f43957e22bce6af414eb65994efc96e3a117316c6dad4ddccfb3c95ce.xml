@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="tests.ui.practice.PracticeTests" skipped="0" tests="4" time="44.76" timestamp="2019-11-22 02:55:26"><testcase classname="tests.ui.practice.PracticeTests" name="Sign in"/><testcase classname="tests.ui.practice.PracticeTests" name="Log in test fail for screenshot"><error message="Expected condition failed: waiting for url to contain &quot;controller=my-account&quot;. Current url: &quot;http://automationpractice.com/index.php?controller=authentication&quot; (tried for 10 second(s) with 50 milliseconds interval)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Stanislavs-MacBook-Pro.local', ip: '192.168.4.145', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '11.0.2'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for url to contain "controller=my-account". Current url: "http://automationpractice.com/index.php?controller=authentication" (tried for 10 second(s) with 50 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Stanislavs-MacBook-Pro.local', ip: '192.168.4.145', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '11.0.2'
+Driver info: driver.version: unknown</error><system-err>Expected condition failed: waiting for url to contain "controller=my-account". Current url: "http://automationpractice.com/index.php?controller=authentication" (tried for 10 second(s) with 50 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Stanislavs-MacBook-Pro.local', ip: '192.168.4.145', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '11.0.2'
+Driver info: driver.version: unknown
+pageObjects.userPages.AccountPage.waitUntilPageIsLoaded(AccountPage.java:29)
+steps.ui.LoginSteps.login(LoginSteps.java:19)
+tests.ui.practice.PracticeTests.logInTestFailForScreenshot(PracticeTests.java:55)
+</system-err></testcase><testcase classname="tests.ui.practice.PracticeTests" name="Checkout test"/><testcase classname="tests.ui.practice.PracticeTests" name="Log in test"/></testsuite>

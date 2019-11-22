@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="tests.api.booking.BookingTests" skipped="0" tests="6" time="3.34" timestamp="2019-11-22 02:55:28"><testcase classname="tests.api.booking.BookingTests" name="Test get new booking"/><testcase classname="tests.api.booking.BookingTests" name="Test get all bookings"/><testcase classname="tests.api.booking.BookingTests" name="Test post invalid dates"/><testcase classname="tests.api.booking.BookingTests" name="Test post on same dates"/><testcase classname="tests.api.booking.BookingTests" name="Test delete booking"><failure message="1 expectation failed.&#10;Expected status code is &lt;200&gt; but was &lt;403&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+Expected status code is &lt;200&gt; but was &lt;403&gt;.
+</failure><system-err>1 expectation failed.
+Expected status code is &lt;200&gt; but was &lt;403&gt;.
+
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:643)
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:122)
+io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:112)
+steps.api.BookingSteps.assertResponseCode(BookingSteps.java:27)
+tests.api.booking.BookingTests.testDeleteBooking(BookingTests.java:124)
+</system-err></testcase><testcase classname="tests.api.booking.BookingTests" name="Test post new booking"/></testsuite>

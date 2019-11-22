@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Booking tests","Test get new booking","SUCCESS","2019-11-22T14:55:28.837986+01:00[Europe/Amsterdam]","0.0","1.91"
+"Booking tests","Test get all bookings","SUCCESS","2019-11-22T14:55:30.78519+01:00[Europe/Amsterdam]","0.0","0.62"
+"Booking tests","Test post invalid dates","SUCCESS","2019-11-22T14:55:31.41333+01:00[Europe/Amsterdam]","0.0","0.15"
+"Booking tests","Test post on same dates","SUCCESS","2019-11-22T14:55:31.566969+01:00[Europe/Amsterdam]","0.0","0.26"
+"Booking tests","Test post new booking","SUCCESS","2019-11-22T14:55:32.174477+01:00[Europe/Amsterdam]","0.0","0.12"
